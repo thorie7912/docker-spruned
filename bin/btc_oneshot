@@ -3,12 +3,14 @@
 set -ex
 
 # Generate bitcoin.conf
-btc_init
+#btc_init
 
 if [ $# -gt 0 ]; then
     args=("$@")
 else
-    args=("-rpcallowip=::/0")
+    args=("--debug --datadir /bitcoin")
 fi
 
-exec bitcoind "${args[@]}"
+cd /spruned-master
+
+exec venv/bin/spruned ${args[@]}
