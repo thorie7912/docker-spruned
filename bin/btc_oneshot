@@ -8,7 +8,7 @@ set -ex
 if [ $# -gt 0 ]; then
     args=("$@")
 else
-    args=("--debug --datadir /spruned --rpcbind 0.0.0.0 --cachesize 50")
+    args=("--debug --datadir /spruned --rpcbind 0.0.0.0 --cache-size 50")
 fi
 
 cd /spruned-master
